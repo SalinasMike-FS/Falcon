@@ -60,7 +60,7 @@ let RolePermissions: [String: [Permission]] = [
 ]
 
 func userHasPermission(_ permission: Permission, for user: User) -> Bool {
-    let superAdmins: Set<String> = ["your_firebase_uid_here"]
+    let superAdmins: Set<String> = ["YDaYnHn50IRZxr9LWk54Kq3Vftv2"] //YDaYnHn50IRZxr9LWk54Kq3Vftv2
     if superAdmins.contains(user.id) {
         return true
     }
@@ -68,7 +68,7 @@ func userHasPermission(_ permission: Permission, for user: User) -> Bool {
 }
 
 func permissions(for user: User) -> [Permission] {
-    let superAdmins: Set<String> = ["your_firebase_uid_here"]
+    let superAdmins: Set<String> = ["YDaYnHn50IRZxr9LWk54Kq3Vftv2"]
     if superAdmins.contains(user.id) {
         return Permission.allCases
     }

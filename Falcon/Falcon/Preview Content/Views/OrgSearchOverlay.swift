@@ -58,3 +58,18 @@ struct OrgSearchOverlay: View {
         }
     }
 }
+
+// MARK: – Preview
+#Preview {
+    // Local wrapper to hold @State vars for the bindings
+    struct OverlayPreview: View {
+        @State private var query = "Demo"
+        @State private var selectedID: String?
+
+        var body: some View {
+            OrgSearchOverlay(query: $query,
+                             selectedOrgID: $selectedID)
+        }
+    }
+    return OverlayPreview()
+}
