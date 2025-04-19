@@ -142,6 +142,32 @@ class FirestoreManager: ObservableObject {
         }
     }
     
+    // MARK: — Organization Search
+
+    /// Search organizations by name prefix (case‑insensitive).
+    /// Returns an array of (id, name).
+    func searchOrganizations(prefix query: String,
+                             completion: @escaping (Result<[(id: String, name: String)], Error>) -> Void) {
+        let queryLC = query.lowercased()
+        let collRef = db.collection("organizations")
+        collRef
+          .whereField("nameLC", isGreaterThanOrEqualTo: queryLC)
+          .whereField("nameLC", isLessThanOrEqualTo: queryLC + "\u{f8ff}")
+          .getDocuments { snapshot, error in
+            if let error = error {
+              completion(.failure(error))
+            } else if let snapshot = snapshot {
+              let results = snapshot.documents.map { doc in
+                (id: doc.documentID,
+                 name: doc.data()["name"] as? String ?? "")
+              }
+              completion(.success(results))
+            } else {
+              completion(.success([]))
+            }
+          }
+    }
+    
     // MARK: - Additional Methods
     /// Example: Fetching roles for an organization (to minimize calls, consider caching these too)
     func fetchOrganizationRoles(organizationID: String, completion: @escaping (Result<[String], Error>) -> Void) {

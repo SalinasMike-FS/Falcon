@@ -15,6 +15,7 @@
 		3F33C3442DAD036300FD91F2 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 3F33C3432DAD036300FD91F2 /* FirebaseDatabase */; };
 		3F33C3462DAD036300FD91F2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3F33C3452DAD036300FD91F2 /* FirebaseFirestore */; };
 		3F33C3482DAD036300FD91F2 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3F33C3472DAD036300FD91F2 /* FirebaseStorage */; };
+		C1BA47402DB249170085965E /* StatesAndCities.json in Resources */ = {isa = PBXBuildFile; fileRef = C1BA473F2DB249170085965E /* StatesAndCities.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		3F93BADA2DACFAF4000CA21B /* Falcon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Falcon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F93BAEA2DACFAF5000CA21B /* FalconTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FalconTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F93BAF42DACFAF5000CA21B /* FalconUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FalconUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1BA473F2DB249170085965E /* StatesAndCities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StatesAndCities.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -94,6 +96,7 @@
 		3F93BAD12DACFAF4000CA21B = {
 			isa = PBXGroup;
 			children = (
+				C1BA473E2DB248C30085965E /* Resources */,
 				3F93BADC2DACFAF4000CA21B /* Falcon */,
 				3F93BAED2DACFAF5000CA21B /* FalconTests */,
 				3F93BAF72DACFAF5000CA21B /* FalconUITests */,
@@ -109,6 +112,14 @@
 				3F93BAF42DACFAF5000CA21B /* FalconUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C1BA473E2DB248C30085965E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C1BA473F2DB249170085965E /* StatesAndCities.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1BA47402DB249170085965E /* StatesAndCities.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
